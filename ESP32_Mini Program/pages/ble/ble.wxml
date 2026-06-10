@@ -1,0 +1,40 @@
+<!--pages/ble/ble.wxml-->
+<view class="container">
+  <view class="card">
+    <view class="section-title">打印机状态</view>
+    <view class="info-row">
+      <text class="info-label">连接状态</text>
+      <text class="info-value {{connected ? 'text-green' : 'text-red'}}">
+        {{connected ? '已连接' : '未连接'}}
+      </text>
+    </view>
+    <block wx:if="{{connected}}">
+      <view class="info-row">
+        <text class="info-label">电量</text>
+        <text class="info-value">{{battery}}%</text>
+      </view>
+      <view class="info-row">
+        <text class="info-label">打印头温度</text>
+        <text class="info-value">{{temperature}}°C</text>
+      </view>
+      <view class="info-row">
+        <text class="info-label">纸张状态</text>
+        <text class="info-value {{hasNoPaper ? 'text-red' : 'text-green'}}">
+          {{hasNoPaper ? '缺纸' : '正常'}}
+        </text>
+      </view>
+    </block>
+  </view>
+
+  <block wx:if="{{!connected}}">
+    <button class="btn-primary" bindtap="startConnect" disabled="{{connecting}}">
+      {{connecting ? '搜索中...' : '搜索并连接打印机'}}
+    </button>
+    <view wx:if="{{connecting}}" class="loading-text">正在搜索 Mini-Printer ...</view>
+  </block>
+
+  <block wx:if="{{connected}}">
+    <button class="btn-outline" bindtap="refreshStatus">刷新状态</button>
+    <button class="btn-primary" style="margin-top: 20rpx;" bindtap="disconnectDevice">断开连接</button>
+  </block>
+</view>

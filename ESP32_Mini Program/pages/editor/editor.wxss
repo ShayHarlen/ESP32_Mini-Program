@@ -1,0 +1,63 @@
+/* pages/editor/editor.wxss */
+.toolbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12rpx 20rpx;
+  border-radius: 12rpx;
+  font-size: 36rpx;
+}
+
+.tool-item.active {
+  background-color: #f0f0f0;
+}
+
+.tool-label {
+  font-size: 20rpx;
+  color: #666;
+  margin-top: 4rpx;
+}
+
+.info-bar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 12rpx;
+  margin-bottom: 16rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.canvas-wrapper {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  margin-bottom: 20rpx;
+}
+
+.editor-canvas {
+  /* 尺寸由 JS 动态设置 */
+}
+
+.bottom-actions {
+  display: flex;
+  gap: 16rpx;
+}
+
+.bottom-actions button {
+  flex: 1;
+}

@@ -1,0 +1,55 @@
+<!--pages/editor/editor.wxml-->
+<view class="container">
+  <!-- 工具栏 -->
+  <view class="toolbar">
+    <view class="tool-item {{tool === 'view' ? 'active' : ''}}" bindtap="setTool" data-tool="view">
+      <text>👆</text>
+      <text class="tool-label">查看</text>
+    </view>
+    <view class="tool-item {{tool === 'draw' ? 'active' : ''}}" bindtap="setTool" data-tool="draw">
+      <text>✏️</text>
+      <text class="tool-label">画黑</text>
+    </view>
+    <view class="tool-item {{tool === 'erase' ? 'active' : ''}}" bindtap="setTool" data-tool="erase">
+      <text>🧹</text>
+      <text class="tool-label">擦除</text>
+    </view>
+    <view class="tool-item" bindtap="undoAction">
+      <text>↩️</text>
+      <text class="tool-label">撤销</text>
+    </view>
+    <view class="tool-item" bindtap="resetImage">
+      <text>🔄</text>
+      <text class="tool-label">重置</text>
+    </view>
+  </view>
+
+  <!-- 图像信息 -->
+  <view class="info-bar">
+    <text>宽度: {{imageWidth}}px</text>
+    <text>高度: {{imageHeight}}px</text>
+    <text>行数: {{imageHeight}}行</text>
+  </view>
+
+  <!-- Canvas 编辑区 -->
+  <view class="canvas-wrapper" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+    <canvas
+      type="2d"
+      id="editorCanvas"
+      class="editor-canvas"
+      style="width: {{canvasDisplayWidth}}px; height: {{canvasDisplayHeight}}px;"
+    />
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="bottom-actions">
+    <button class="btn-outline" bindtap="chooseNewImage">换一张图</button>
+    <button
+      class="btn-primary {{canPrint ? '' : 'btn-disabled'}}"
+      bindtap="startPrint"
+      disabled="{{!canPrint || printing}}"
+    >
+      {{printing ? '打印中...' : '开始打印'}}
+    </button>
+  </view>
+</view>

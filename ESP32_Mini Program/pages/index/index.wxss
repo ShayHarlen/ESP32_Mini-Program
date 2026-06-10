@@ -1,0 +1,90 @@
+/* pages/index/index.wxss */
+.header {
+  text-align: center;
+  padding: 60rpx 0 40rpx;
+}
+
+.title {
+  display: block;
+  font-size: 52rpx;
+  font-weight: 700;
+  color: #000;
+}
+
+.subtitle {
+  display: block;
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+  border-radius: 16rpx;
+  margin-bottom: 40rpx;
+  font-size: 28rpx;
+}
+
+.status-bar.connected {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-bar.disconnected {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.status-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin-right: 12rpx;
+}
+
+.connected .status-dot {
+  background-color: #2e7d32;
+}
+
+.disconnected .status-dot {
+  background-color: #e65100;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.action-card {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 36rpx;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.action-card:active {
+  background-color: #f9f9f9;
+}
+
+.action-icon {
+  font-size: 48rpx;
+  margin-bottom: 12rpx;
+}
+
+.action-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #000;
+}
+
+.action-desc {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+}

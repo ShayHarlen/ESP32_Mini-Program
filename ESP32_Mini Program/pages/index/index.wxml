@@ -1,0 +1,32 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">Mini Printer</text>
+    <text class="subtitle">ESP32 热敏打印机</text>
+  </view>
+
+  <view class="status-bar {{bleConnected ? 'connected' : 'disconnected'}}">
+    <view class="status-dot"></view>
+    <text>{{bleConnected ? '蓝牙已连接' : '蓝牙未连接'}}</text>
+  </view>
+
+  <view class="actions">
+    <view class="action-card" bindtap="goToBle">
+      <text class="action-icon">📶</text>
+      <text class="action-title">连接打印机</text>
+      <text class="action-desc">搜索并连接 ESP32 打印机</text>
+    </view>
+
+    <view class="action-card" bindtap="goToAI">
+      <text class="action-icon">🎨</text>
+      <text class="action-title">AI 生成图片</text>
+      <text class="action-desc">文字生成图片 / 图片生成图片</text>
+    </view>
+
+    <view class="action-card" bindtap="chooseImage">
+      <text class="action-icon">📷</text>
+      <text class="action-title">上传图片打印</text>
+      <text class="action-desc">从相册选择图片进行打印</text>
+    </view>
+  </view>
+</view>
